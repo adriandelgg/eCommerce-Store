@@ -2,16 +2,16 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { createSelector } from 'reselect';
 import { commerce } from '../../lib/commerce';
 
+// Fetches products
 export const getProducts = createAsyncThunk(
-	'fetchData',
+	'productsData/getProducts',
 	async (arg, thunkAPI) => {
 		const response = await commerce.products.list();
-		const data = await response.json();
-		return data;
+		return response.data;
 	}
 );
 
-const slice = createSlice({
+const productsSlice = createSlice({
 	name: 'productsData',
 	initialState: {
 		data: null,
@@ -37,8 +37,7 @@ const slice = createSlice({
 });
 
 // Exports the extraReducers
-export default slice.reducer;
+export default productsSlice.reducer;
 
 // Selectors
-export const productsData = createSelector(state => state.data);
-// console.log(productsData);
+// export const productsData = createSelector(state => state.products.data);

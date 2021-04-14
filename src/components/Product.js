@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { itemAdded, itemRemoved } from '../store/shoppingCart';
+import { itemAdded, itemRemoved } from '../redux/shoppingCart';
 import {
 	Card,
 	Typography,
@@ -11,11 +11,13 @@ import {
 } from '@material-ui/core';
 import { ExpandMoreIcon, AddShoppingCart } from '@material-ui/icons';
 
-const Product = ({ data }) => {
+const Product = () => {
 	const dispatch = useDispatch();
+	const data = useSelector(state => state.products.data);
+
 	return (
 		<>
-			{data.data.map(item => {
+			{data.map(item => {
 				return (
 					<Grid
 						item
