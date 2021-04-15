@@ -30,17 +30,21 @@ const Navbar = () => {
 			</Grid>
 			<Grid item xs={4} lg={4} component="nav">
 				<Link to="/">Home</Link>
-				<Link>About</Link>
+				<Link to="/">About</Link>
 			</Grid>
 			<Grid item xs={4} lg={4}>
-				<IconButton>
+				<IconButton aria-label="Search">
 					<Search />
 				</IconButton>
-				<IconButton>
+				<IconButton aria-label="Profile">
 					<AccountBox />
 				</IconButton>
-				{/* Link to Cart */}
-				<IconButton>
+
+				<IconButton
+					component={Link}
+					to="/shoppingcart"
+					aria-label="Shopping Cart"
+				>
 					<Badge color="secondary" badgeContent={itemsInCart}>
 						<ShoppingCart />
 					</Badge>

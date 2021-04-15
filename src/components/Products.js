@@ -1,12 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import Product from './Product';
-import { Grid } from '@material-ui/core';
+import { Grid, CircularProgress } from '@material-ui/core';
 
 const Products = () => {
+	const data = useSelector(state => state.products.data);
+
 	return (
 		<>
 			<Grid container component="main">
-				<Product />
+				{data ? <Product /> : <CircularProgress />}
 			</Grid>
 		</>
 	);

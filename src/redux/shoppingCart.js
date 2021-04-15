@@ -5,30 +5,43 @@ const slice = createSlice({
 	name: 'cart',
 	initialState: [],
 	reducers: {
-		itemAdded: (items, action) => {
+		itemAdded: (items, { payload }) => {
 			let newItem = {
-				id: action.payload.id,
-				name: action.payload.name,
-				price: action.payload.price,
-				img: action.payload.img,
+				id: payload.id,
+				name: payload.name,
+				price: payload.price,
+				img: payload.img,
 				quantity: 1
 			};
-			let index = items.findIndex(item => item.id === action.payload.id);
+			let index = items.findIndex(item => item.id === payload.id);
 			index === -1 ? items.push(newItem) : items[index].quantity++;
 		},
 
-		itemRemoved: (items, action) => {
-			let index = items.findIndex(item => item.id === action.payload);
+		itemRemoved: (items, { payload }) => {
+			let index = items.findIndex(item => item.id === payload);
 			if (index === -1) return;
 			let itemQuantity = items[index].quantity;
 			itemQuantity === 1 ? items.splice(index, 1) : items[index].quantity--;
 		},
 
-		itemsChanged: (items, action) => {}
+		itemsChanged: (items, { payload }) => {
+			let index = items.findIndex(item => item.id === payload.id);
+			items[index].quantity = Number(payload.value);
+		},
+
+		itemDeleted: (items, { payload }) => {
+			let index = items.findIndex(item => item.id === payload);
+			items.splice(index, 1);
+		}
 	}
 });
 
-export const { itemAdded, itemRemoved, itemsChanged } = slice.actions;
+export const {
+	itemAdded,
+	itemRemoved,
+	itemsChanged,
+	itemDeleted
+} = slice.actions;
 export default slice.reducer;
 
 // Selectors
