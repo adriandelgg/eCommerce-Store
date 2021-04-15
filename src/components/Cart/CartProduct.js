@@ -6,7 +6,6 @@ import {
 	Typography,
 	IconButton,
 	Paper,
-	Select,
 	NativeSelect,
 	MenuItem,
 	InputLabel

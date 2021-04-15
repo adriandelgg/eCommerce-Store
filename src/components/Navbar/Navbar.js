@@ -1,21 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import {
-	Typography,
-	Grid,
-	Card,
-	Badge,
-	IconButton,
-	Container
-} from '@material-ui/core';
-import {
-	ShoppingCart,
-	RemoveShoppingCart,
-	AddShoppingCart,
-	AccountBox,
-	Search
-} from '@material-ui/icons';
+import { Typography, Grid, Badge, IconButton } from '@material-ui/core';
+import { ShoppingCart, AccountBox, Search } from '@material-ui/icons';
 import { getTotalItemsInCart } from '../../redux/shoppingCart';
 
 const Navbar = () => {
