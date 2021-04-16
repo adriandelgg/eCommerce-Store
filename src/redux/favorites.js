@@ -6,7 +6,6 @@ const favorites = createSlice({
 	initialState: [],
 	reducers: {
 		itemFavorited: (state, { payload }) => {
-			console.log('Hello');
 			let newItem = {
 				id: payload.id,
 				name: payload.name,
@@ -26,7 +25,11 @@ export const { itemFavorited, itemUnfavorited } = favorites.actions;
 export default favorites.reducer;
 
 // Selectors
-export const getFavoritedItems = createSelector(
+export const getFavoritedItemsTotal = createSelector(
 	state => state.favorites,
 	items => items.length
+);
+export const getHeartsFilled = createSelector(
+	state => state.favorites,
+	items => items.map(item => item.id)
 );

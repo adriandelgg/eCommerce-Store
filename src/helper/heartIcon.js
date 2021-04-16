@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconButton } from '@material-ui/core';
 import { FavoriteBorder, Favorite } from '@material-ui/icons';
-import { useDispatch } from 'react-redux';
-import { itemFavorited, itemUnfavorited } from '../redux/favorites';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+	getHeartsFilled,
+	itemFavorited,
+	itemUnfavorited
+} from '../redux/favorites';
 
 const HeartIcon = ({ newItem, id }) => {
 	const [heartFilled, setHeartFilled] = useState(false);
 	const dispatch = useDispatch();
+	const favoritedItems = useSelector(getHeartsFilled);
+
+	useEffect(() => {
+		if (favoritedItems.includes(id)) {
+			setHeartFilled(true);
+		}
+	}, []);
 
 	const toggleHeart = () => {
 		setHeartFilled(prev => !prev);

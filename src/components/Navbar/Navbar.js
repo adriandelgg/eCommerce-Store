@@ -7,12 +7,12 @@ import IsMobile from '../../helper/IsMobile';
 import { getTotalItemsInCart } from '../../redux/shoppingCart';
 import { Typography, Badge, IconButton } from '@material-ui/core';
 import { ShoppingCart, AccountBox, Search, Favorite } from '@material-ui/icons';
-import { getFavoritedItems } from '../../redux/favorites';
+import { getFavoritedItemsTotal } from '../../redux/favorites';
 
 const Navbar = () => {
 	const { isMobile } = IsMobile();
 	const itemsInCart = useSelector(getTotalItemsInCart);
-	const itemsFavorited = useSelector(getFavoritedItems);
+	const itemsFavorited = useSelector(getFavoritedItemsTotal);
 
 	return (
 		<header>
