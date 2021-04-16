@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar';
-import Products from './components/Products';
+import Products from './components/Products/Products';
+import Favorites from './components/Favorites/Favorites';
 import Cart from './components/Cart/Cart';
 import { getProducts } from './redux/middleware/fetchProducts';
 
@@ -21,6 +22,7 @@ const App = () => {
 			<Switch>
 				<Route exact path="/" component={Products} />
 				<Route path="/shoppingcart" component={Cart} />
+				<Route path="/favorites" component={Favorites} />
 			</Switch>
 		</Router>
 	);

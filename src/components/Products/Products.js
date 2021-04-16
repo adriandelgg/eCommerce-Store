@@ -1,4 +1,5 @@
 import React from 'react';
+import './products.css';
 import { useSelector } from 'react-redux';
 
 import Product from './Product';
@@ -9,7 +10,13 @@ const Products = () => {
 
 	return (
 		<>
-			<Grid container component="main">
+			<Grid
+				className="products-container"
+				container
+				component="main"
+				spacing={4}
+				justify="center"
+			>
 				{data ? <Product /> : <CircularProgress />}
 			</Grid>
 		</>

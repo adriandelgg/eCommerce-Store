@@ -28,7 +28,7 @@ const CartProduct = () => {
 			{shoppingCart.map(item => {
 				const { id, name, img, price, quantity } = item;
 				return (
-					<Paper className="item-cart-container" elevation={2}>
+					<Paper className="item-cart-container" elevation={2} key={id}>
 						<img className="product-cart-img" src={img} alt="" />
 						<Typography>{name}</Typography>
 						<p>{price}</p>
