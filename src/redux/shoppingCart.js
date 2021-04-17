@@ -53,3 +53,8 @@ export const getTotalItemsInCart = createSelector(
 		return totalItems;
 	}
 );
+
+export const getItemsInCart = createSelector(
+	state => state.shoppingCart,
+	items => items.map(item => item.id)
+);

@@ -1,0 +1,7 @@
+.favorite-item-container {
+	display: flex;
+}
+
+.favorite-img {
+	width: 180px;
+}

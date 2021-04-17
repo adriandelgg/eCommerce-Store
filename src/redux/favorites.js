@@ -33,3 +33,8 @@ export const getHeartsFilled = createSelector(
 	state => state.favorites,
 	items => items.map(item => item.id)
 );
+
+export const getFavoritedItems = createSelector(
+	state => state.favorites,
+	items => items
+);
