@@ -9,7 +9,7 @@ const Cart = () => {
 
 	return (
 		<main>
-			<Typography variant="h2">Cart</Typography>
+			<h3 className="category-heading">Shopping Cart</h3>
 			{itemsInCart === 0 ? <h3>Empty Cart</h3> : <CartProduct />}
 		</main>
 	);

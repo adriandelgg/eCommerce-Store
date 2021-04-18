@@ -9,17 +9,22 @@ const Products = () => {
 	const data = useSelector(state => state.products.data);
 
 	return (
-		<>
+		<section id="products">
+			<h3 className="category-heading">Products</h3>
 			<Grid
 				className="products-container"
 				container
 				component="main"
-				spacing={4}
+				spacing={3}
 				justify="center"
 			>
-				{data ? <Product /> : <CircularProgress />}
+				{data ? (
+					<Product />
+				) : (
+					<CircularProgress style={{ margin: '10em auto' }} />
+				)}
 			</Grid>
-		</>
+		</section>
 	);
 };
 

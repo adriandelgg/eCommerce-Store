@@ -12,14 +12,10 @@ const Favorites = () => {
 
 	return (
 		<section>
-			{totalFavorites ? (
-				<>
-					<Typography variant="h1">Items Favorited:</Typography>
-					<Favorite />
-				</>
-			) : (
-				<Typography variant="h2">You have no items favorited.</Typography>
-			)}
+			<h3 className="category-heading">Saved Items</h3>
+			<Favorite />
+
+			{!totalFavorites && <h4>You have no saved items.</h4>}
 		</section>
 	);
 };

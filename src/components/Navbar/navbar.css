@@ -1,7 +1,27 @@
 header {
 	display: flex;
+	/* position: relative; */
 	justify-content: space-between;
+	height: 3em;
+	align-items: center;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	max-width: 1700px;
+	background-color: #fff;
+	z-index: 15;
 }
 
-.logo {
+nav {
+	/* display: flex; */
+	/* background-color: #fff; */
+	/* justify-content: space-evenly; */
+	/* align-items: center; */
+	/* width: 20%; */
+}
+
+nav a {
+	text-decoration: none;
+	padding: 0 2em;
 }

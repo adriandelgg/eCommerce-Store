@@ -43,20 +43,17 @@ const Product = () => {
 							<CardHeader
 								title={item.name}
 								action={<HeartIcon newItem={newItem} id={item.id} />}
+								disableTypography
 							/>
-							<CardContent>
-								<Typography>
-									{item.description
-										.replaceAll('<p>', '')
-										.replaceAll('</p>', '')}
-								</Typography>
-								<Typography variant="h6">
-									{item.price.formatted_with_symbol}
-								</Typography>
+							<CardContent className="card-content">
+								{/* <Typography variant="h6"> */}
+								{item.price.formatted_with_symbol}
+								{/* </Typography> */}
 							</CardContent>
 
 							<CardActions>
 								<Button
+									className="card-content"
 									variant="contained"
 									color="primary"
 									disabled={itemInCart ? true : false}
@@ -69,7 +66,6 @@ const Product = () => {
 								</Button>
 								{itemInCart && (
 									<Button
-										// variant="contained"
 										color="secondary"
 										onClick={() => dispatch(itemRemoved(item.id))}
 									>

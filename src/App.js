@@ -7,6 +7,7 @@ import Products from './components/Products/Products';
 import Favorites from './components/Favorites/Favorites';
 import Cart from './components/Cart/Cart';
 import { getProducts } from './redux/middleware/fetchProducts';
+import Landing from './components/LandingPage/Landing';
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const App = () => {
 	return (
 		<Router>
 			<Navbar />
+			<Landing />
 
 			<Switch>
 				<Route exact path="/" component={Products} />

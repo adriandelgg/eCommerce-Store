@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -15,12 +15,11 @@ const Navbar = () => {
 	const itemsFavorited = useSelector(getFavoritedItemsTotal);
 
 	return (
-		<header>
-			{!isMobile && (
-				<Typography className="logo" variant="h5" component="h2">
-					Peruvian Designs
-				</Typography>
-			)}
+		<header id="header">
+			<Typography className="logo" variant="h4" component="h2">
+				Apple
+			</Typography>
+
 			<nav>
 				<Link to="/">Home</Link>
 				<Link to="/">About</Link>
