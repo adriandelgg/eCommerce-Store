@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import IsMobile from '../../helper/IsMobile';
 
 import { getTotalItemsInCart } from '../../redux/shoppingCart';
-import { Typography, Badge, IconButton } from '@material-ui/core';
-import { ShoppingCart, AccountBox, Search, Favorite } from '@material-ui/icons';
+import { Badge, IconButton } from '@material-ui/core';
+import { ShoppingCart, Search, Favorite } from '@material-ui/icons';
 import { getFavoritedItemsTotal } from '../../redux/favorites';
 
 const Navbar = () => {
@@ -16,9 +16,7 @@ const Navbar = () => {
 
 	return (
 		<header id="header">
-			<Typography className="logo" variant="h4" component="h2">
-				Apple
-			</Typography>
+			<h1 className="logo">Apple</h1>
 
 			<nav>
 				<Link to="/">Home</Link>

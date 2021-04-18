@@ -3,12 +3,15 @@ import './cart.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 import {
-	Typography,
 	IconButton,
 	Paper,
-	NativeSelect,
-	MenuItem,
-	InputLabel
+	InputLabel,
+	TableContainer,
+	TableHead,
+	Table,
+	TableRow,
+	TableCell,
+	TableBody
 } from '@material-ui/core';
 import { Remove, Add, DeleteForever } from '@material-ui/icons';
 import {
@@ -17,71 +20,111 @@ import {
 	itemDeleted,
 	itemsChanged
 } from '../../redux/shoppingCart';
+import { Input } from '@material-ui/core';
+import { FormControl } from '@material-ui/core';
 
 // Creates item in cart
-const CartProduct = () => {
+const CartProduct = ({ usdConverter }) => {
 	const shoppingCart = useSelector(state => state.shoppingCart);
 	const dispatch = useDispatch();
 
 	return (
 		<>
-			{shoppingCart.map(item => {
-				const { id, name, img, price, quantity } = item;
-				return (
-					<Paper className="item-cart-container" elevation={2} key={id}>
-						<img className="product-cart-img" src={img} alt="" />
-						<Typography>{name}</Typography>
-						<p>{price}</p>
+			<TableContainer component={Paper}>
+				<Table>
+					<TableHead>
+						<TableRow>
+							<TableCell>Product</TableCell>
+							<TableCell>Price</TableCell>
+							<TableCell>Quantity</TableCell>
+							<TableCell>Subtotal</TableCell>
+						</TableRow>
+					</TableHead>
+					<TableBody>
+						{shoppingCart.map(item => {
+							const { id, name, img, price, quantity } = item;
 
-						<IconButton onClick={() => dispatch(itemRemoved(id))}>
-							<Remove />
-						</IconButton>
-
-						<InputLabel htmlFor={id}>Quantity:</InputLabel>
-						<NativeSelect
-							id={id}
-							value={quantity}
-							onChange={({ target: { value } }) =>
-								dispatch(itemsChanged({ id, value }))
-							}
-						>
-							<option value={0}>None</option>
-							<option value={1}>1</option>
-							<option value={2}>2</option>
-							<option value={3}>3</option>
-							<option value={4}>4</option>
-							<option value={5}>5</option>
-							<option value={6}>6</option>
-							<option value={7}>7</option>
-							<option value={8}>8</option>
-							<option value={9}>9</option>
-							<option value={10}>10</option>
-						</NativeSelect>
-
-						<IconButton
-							onClick={() =>
-								dispatch(
-									itemAdded({
-										id,
-										name,
-										price,
-										img
-									})
-								)
-							}
-						>
-							<Add />
-						</IconButton>
-						<IconButton
-							color="secondary"
-							onClick={() => dispatch(itemDeleted(id))}
-						>
-							Delete
-							<DeleteForever />
-						</IconButton>
-					</Paper>
-				);
-			})}
+							return (
+								<TableRow>
+									<TableCell component="th" scope="row">
+										<div className="img-and-name">
+											<IconButton
+												color="secondary"
+												onClick={() => dispatch(itemDeleted(id))}
+												size="small"
+												edge="start"
+											>
+												<DeleteForever />
+											</IconButton>
+											<img
+												className="product-cart-img"
+												src={img}
+												alt=""
+											/>
+											<p className="product-name">{name}</p>
+										</div>
+									</TableCell>
+									<TableCell>
+										<p>{price}</p>
+									</TableCell>
+									<TableCell>
+										<div className="quantity-container">
+											<IconButton
+												onClick={() => dispatch(itemRemoved(id))}
+											>
+												<Remove />
+											</IconButton>
+											<FormControl>
+												<InputLabel htmlFor={id}>
+													Quantity:
+												</InputLabel>
+												<Input
+													id={id}
+													style={{ width: '3em' }}
+													type="number"
+													value={quantity}
+													onChange={({ target: { value } }) =>
+														dispatch(itemsChanged({ id, value }))
+													}
+												></Input>
+											</FormControl>
+											<IconButton
+												onClick={() =>
+													dispatch(
+														itemAdded({
+															id,
+															name,
+															price,
+															img
+														})
+													)
+												}
+											>
+												<Add />
+											</IconButton>
+										</div>
+									</TableCell>
+									<TableCell>
+										{/* <IconButton
+										color="secondary"
+										onClick={() => dispatch(itemDeleted(id))}
+										>
+										Delete
+										<DeleteForever />
+									</IconButton> */}
+										{usdConverter.format(
+											quantity *
+												Number(
+													price.replace('$', '').replace(',', '')
+												)
+										)}
+									</TableCell>
+								</TableRow>
+							);
+						})}
+					</TableBody>
+				</Table>
+			</TableContainer>
 		</>
 	);
 };

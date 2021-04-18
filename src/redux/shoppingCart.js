@@ -54,6 +54,18 @@ export const getTotalItemsInCart = createSelector(
 	}
 );
 
+export const getTotalPriceAmount = createSelector(
+	state => state.shoppingCart,
+	items => {
+		let totalAmount = 0;
+		items.forEach(item => {
+			totalAmount +=
+				item.quantity * item.price.replace('$', '').replace(',', '');
+		});
+		return totalAmount;
+	}
+);
+
 export const getItemsInCart = createSelector(
 	state => state.shoppingCart,
 	items => items.map(item => item.id)

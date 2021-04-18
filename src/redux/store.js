@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import fetchProductsReducer from './middleware/fetchProducts';
+import fetchProductsReducer, { getProducts } from './middleware/fetchProducts';
 import shoppingCartReducer from './shoppingCart';
 import favoritesReducer from './favorites';
 
@@ -10,5 +10,7 @@ const store = configureStore({
 		favorites: favoritesReducer
 	}
 });
+
+store.dispatch(getProducts());
 
 export default store;

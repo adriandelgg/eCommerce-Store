@@ -1,7 +1,23 @@
+.shopping-cart {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
 .item-cart-container {
+	display: flex;
+	/* flex-wrap: wrap; */
+	/* background: red; */
+}
+
+.img-and-name {
+	display: flex;
+	align-items: center;
+}
+
+.quantity-container {
 	display: flex;
 }
 
 .product-cart-img {
-	width: 10em;
+	width: 5em;
 }
