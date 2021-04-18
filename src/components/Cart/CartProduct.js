@@ -33,7 +33,7 @@ const CartProduct = ({ usdConverter }) => {
 
 	return (
 		<>
-			<TableContainer component={Paper}>
+			<TableContainer>
 				<Table>
 					<TableHead>
 						<TableRow>
@@ -64,7 +64,7 @@ const CartProduct = ({ usdConverter }) => {
 												src={img}
 												alt=""
 											/>
-											<p className="product-name">{name}</p>
+											<p className="product-font">{name}</p>
 										</div>
 									</TableCell>
 									<TableCell>
@@ -125,14 +125,6 @@ const CartProduct = ({ usdConverter }) => {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			<Button
-				component={Link}
-				to="/"
-				startIcon={<ArrowBack />}
-				variant="contained"
-			>
-				Continue Shopping
-			</Button>
 		</>
 	);
 };

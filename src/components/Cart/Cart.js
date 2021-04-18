@@ -6,6 +6,10 @@ import TotalAmount from './TotalAmount';
 import { getTotalItemsInCart } from '../../redux/shoppingCart';
 import IsMobile from '../../helper/IsMobile';
 import MobileCart from './MobileCart';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { ArrowBack } from '@material-ui/icons';
+import Coupon from './Coupon';
 
 const Cart = () => {
 	const itemsInCart = useSelector(getTotalItemsInCart);
@@ -20,16 +24,35 @@ const Cart = () => {
 	return (
 		<section className="shopping-cart">
 			<h3 className="category-heading">Shopping Cart</h3>
-			{itemsInCart === 0 ? (
-				<h3>Empty Cart</h3>
-			) : !isMobile ? ( // Renders a desktop version or mobile version of cart
-				<>
-					<CartProduct usdConverter={usdConverter} />
-				</>
-			) : (
-				<MobileCart />
-			)}
-			<TotalAmount usdConverter={usdConverter} />
+			<div className="cart-and-total">
+				<div className="cart-containers">
+					{itemsInCart === 0 ? (
+						<h3>Empty Cart</h3>
+					) : // Renders a desktop version or mobile version of cart
+					!isMobile ? (
+						<>
+							<CartProduct usdConverter={usdConverter} />
+						</>
+					) : (
+						<MobileCart />
+					)}
+
+					<Button
+						component={Link}
+						to="/"
+						style={{ margin: '2em 0' }}
+						startIcon={<ArrowBack />}
+						variant="contained"
+					>
+						Continue Shopping
+					</Button>
+				</div>
+				<hr className="hr-vertical" />
+				<div className="total-and-coupon cart-containers">
+					<TotalAmount usdConverter={usdConverter} />
+					<Coupon />
+				</div>
+			</div>
 		</section>
 	);
 };

@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {
-	IconButton,
 	Paper,
-	InputLabel,
 	TableContainer,
 	Table,
 	TableHead,
@@ -20,9 +18,14 @@ const TotalAmount = ({ usdConverter }) => {
 
 	return (
 		<>
-			<h3>Cart Totals</h3>
+			{/* <h3>Cart Totals</h3> */}
 			<TableContainer>
 				<Table>
+					<TableHead>
+						<TableRow>
+							<TableCell colSpan={2}>Cart Total</TableCell>
+						</TableRow>
+					</TableHead>
 					<TableBody>
 						<TableRow>
 							<TableCell>Subtotal</TableCell>
@@ -39,7 +42,7 @@ const TotalAmount = ({ usdConverter }) => {
 							<TableCell align="right">Tax based on zip code</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell>Subtotal</TableCell>
+							<TableCell>Total</TableCell>
 							<TableCell align="right">
 								{usdConverter.format(totalPrices)}
 							</TableCell>
@@ -47,7 +50,15 @@ const TotalAmount = ({ usdConverter }) => {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			<Button variant="contained">Proceed to Checkout</Button>
+			<Button
+				style={{
+					margin: '2em 0',
+					width: '100%'
+				}}
+				variant="contained"
+			>
+				Proceed to Checkout
+			</Button>
 		</>
 	);
 };
