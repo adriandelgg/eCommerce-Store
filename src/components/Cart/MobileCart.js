@@ -1,6 +1,4 @@
 import React from 'react';
-import './cart.css';
-import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -15,6 +13,7 @@ import {
 	TableBody,
 	Button
 } from '@material-ui/core';
+
 import { Remove, Add, DeleteForever, ArrowBack } from '@material-ui/icons';
 import {
 	itemRemoved,
@@ -26,21 +25,18 @@ import {
 import { Input } from '@material-ui/core';
 import { FormControl } from '@material-ui/core';
 
-// Creates item in cart
-const CartProduct = ({ usdConverter }) => {
+const MobileCart = () => {
 	const shoppingCart = useSelector(getAllItemsInCart);
 	const dispatch = useDispatch();
 
 	return (
 		<>
-			<TableContainer component={Paper}>
+			<TableContainer>
 				<Table>
 					<TableHead>
 						<TableRow>
 							<TableCell>Product</TableCell>
-							<TableCell>Price</TableCell>
 							<TableCell>Quantity</TableCell>
-							<TableCell>Subtotal</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -53,6 +49,10 @@ const CartProduct = ({ usdConverter }) => {
 										<div className="img-and-name">
 											<IconButton
 												color="secondary"
+												style={{
+													width: '1em',
+													paddingRight: '.4em'
+												}}
 												onClick={() => dispatch(itemDeleted(id))}
 												size="small"
 												edge="start"
@@ -64,15 +64,19 @@ const CartProduct = ({ usdConverter }) => {
 												src={img}
 												alt=""
 											/>
-											<p className="product-name">{name}</p>
+											<div className="product-name">
+												<p>{name}</p>
+												<p>
+													{quantity} x {price}
+												</p>
+											</div>
 										</div>
-									</TableCell>
-									<TableCell>
-										<p>{price}</p>
 									</TableCell>
 									<TableCell>
 										<div className="quantity-container">
 											<IconButton
+												size="small"
+												edge="start"
 												onClick={() => {
 													if (quantity === 1) return;
 													dispatch(itemRemoved(id));
@@ -96,6 +100,8 @@ const CartProduct = ({ usdConverter }) => {
 												/>
 											</FormControl>
 											<IconButton
+												size="small"
+												edge="end"
 												onClick={() =>
 													dispatch(
 														itemAdded({
@@ -111,30 +117,14 @@ const CartProduct = ({ usdConverter }) => {
 											</IconButton>
 										</div>
 									</TableCell>
-									<TableCell>
-										{usdConverter.format(
-											quantity *
-												Number(
-													price.replace('$', '').replace(',', '')
-												)
-										)}
-									</TableCell>
 								</TableRow>
 							);
 						})}
 					</TableBody>
 				</Table>
 			</TableContainer>
-			<Button
-				component={Link}
-				to="/"
-				startIcon={<ArrowBack />}
-				variant="contained"
-			>
-				Continue Shopping
-			</Button>
 		</>
 	);
 };
 
-export default CartProduct;
+export default MobileCart;

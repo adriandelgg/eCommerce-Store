@@ -46,6 +46,11 @@ export const {
 export default slice.reducer;
 
 // Selectors
+export const getAllItemsInCart = createSelector(
+	state => state.shoppingCart,
+	items => items
+);
+
 export const getTotalItemsInCart = createSelector(
 	state => state.shoppingCart,
 	items => {

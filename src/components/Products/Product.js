@@ -34,7 +34,7 @@ const Product = () => {
 				const itemInCart = itemsInCart.includes(item.id);
 
 				return (
-					<Grid item xs={11} sm={4} lg={3} key={item.id} id={item.id}>
+					<Grid item xs={10} sm={4} lg={3} key={item.id} id={item.id}>
 						<Card elevation={6}>
 							<CardMedia>
 								<img src={item.media.source} alt="" width="100%" />

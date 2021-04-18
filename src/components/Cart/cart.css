@@ -14,10 +14,23 @@
 	align-items: center;
 }
 
+.product-name {
+	font-size: clamp(11px, 4vw, 18px);
+}
+
 .quantity-container {
 	display: flex;
 }
 
 .product-cart-img {
 	width: 5em;
+}
+
+.cart-container {
+}
+
+@media (max-width: 480px) {
+	.product-cart-img {
+		width: 3.5em;
+	}
 }
