@@ -27,6 +27,7 @@ const slice = createSlice({
 		itemsChanged: (items, { payload }) => {
 			let index = items.findIndex(item => item.id === payload.id);
 			items[index].quantity = Number(payload.value);
+			if (items[index].quantity === 0) items.splice(index, 1);
 		},
 
 		itemDeleted: (items, { payload }) => {

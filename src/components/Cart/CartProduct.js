@@ -11,9 +11,10 @@ import {
 	Table,
 	TableRow,
 	TableCell,
-	TableBody
+	TableBody,
+	Button
 } from '@material-ui/core';
-import { Remove, Add, DeleteForever } from '@material-ui/icons';
+import { Remove, Add, DeleteForever, ArrowBack } from '@material-ui/icons';
 import {
 	itemRemoved,
 	itemAdded,
@@ -70,7 +71,10 @@ const CartProduct = ({ usdConverter }) => {
 									<TableCell>
 										<div className="quantity-container">
 											<IconButton
-												onClick={() => dispatch(itemRemoved(id))}
+												onClick={() => {
+													if (quantity === 1) return;
+													dispatch(itemRemoved(id));
+												}}
 											>
 												<Remove />
 											</IconButton>
@@ -83,10 +87,11 @@ const CartProduct = ({ usdConverter }) => {
 													style={{ width: '3em' }}
 													type="number"
 													value={quantity}
-													onChange={({ target: { value } }) =>
-														dispatch(itemsChanged({ id, value }))
-													}
-												></Input>
+													onChange={({ target: { value } }) => {
+														if (value < 1) return;
+														dispatch(itemsChanged({ id, value }));
+													}}
+												/>
 											</FormControl>
 											<IconButton
 												onClick={() =>
@@ -125,6 +130,9 @@ const CartProduct = ({ usdConverter }) => {
 					</TableBody>
 				</Table>
 			</TableContainer>
+			<Button startIcon={<ArrowBack />} variant="contained">
+				Continue Shopping
+			</Button>
 		</>
 	);
 };

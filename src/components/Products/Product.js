@@ -7,7 +7,6 @@ import {
 } from '../../redux/shoppingCart';
 import {
 	Card,
-	Typography,
 	Button,
 	CardMedia,
 	Grid,
@@ -46,9 +45,7 @@ const Product = () => {
 								disableTypography
 							/>
 							<CardContent className="card-content">
-								{/* <Typography variant="h6"> */}
 								{item.price.formatted_with_symbol}
-								{/* </Typography> */}
 							</CardContent>
 
 							<CardActions>
