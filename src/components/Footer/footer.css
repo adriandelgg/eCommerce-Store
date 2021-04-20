@@ -1,0 +1,32 @@
+footer {
+	height: 10em;
+}
+
+.contact-me {
+	text-align: center;
+	margin: 2em 0 1em;
+}
+
+.socials-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 10em;
+}
+
+.social-footer {
+	margin: 1em;
+}
+
+.footer-text {
+	margin-top: 0.7em;
+	text-align: center;
+}
+
+.backup-arrow {
+	margin: 2em auto 0.5em;
+	cursor: pointer;
+	text-align: center;
+	animation: backDown 0.6s forwards;
+	width: 70px;
+}

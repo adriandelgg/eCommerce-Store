@@ -1,7 +1,30 @@
 .favorite-item-container {
 	display: flex;
+	align-items: center;
+	margin: 2em;
 }
 
 .favorite-img {
-	width: 180px;
+	width: 10em;
+	height: auto;
+}
+
+.favorite-name {
+	font-size: clamp(18px, 3vw, 22px);
+}
+
+.favorite-price {
+	margin: 1em 0;
+}
+
+.favorite-btn {
+	text-align: center;
+	margin: 2em;
+}
+
+@media (max-width: 920px) {
+	.favorite-img {
+		width: auto;
+		height: 5em;
+	}
 }

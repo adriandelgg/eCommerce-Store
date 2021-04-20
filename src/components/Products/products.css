@@ -2,15 +2,6 @@
 	margin-top: 2em;
 }
 
-.category-heading {
-	text-align: center;
-	font-size: clamp(40px, 5vw, 60px);
-	margin: 1em 0;
-}
-
 .products-container {
 	max-width: 1700px;
-}
-
-.card-content {
 }

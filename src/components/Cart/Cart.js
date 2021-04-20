@@ -8,7 +8,7 @@ import IsMobile from '../../helper/IsMobile';
 import MobileCart from './MobileCart';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import { ArrowBack } from '@material-ui/icons';
+import { KeyboardReturn } from '@material-ui/icons';
 import Coupon from './Coupon';
 
 const Cart = () => {
@@ -27,7 +27,7 @@ const Cart = () => {
 			<div className="cart-and-total">
 				<div className="cart-containers">
 					{itemsInCart === 0 ? (
-						<h3>Empty Cart</h3>
+						<h4 className="empty-heading">Empty Cart</h4>
 					) : // Renders a desktop version or mobile version of cart
 					!isMobile ? (
 						<>
@@ -41,7 +41,7 @@ const Cart = () => {
 						component={Link}
 						to="/"
 						style={{ margin: '2em 0' }}
-						startIcon={<ArrowBack />}
+						startIcon={<KeyboardReturn />}
 						variant="contained"
 					>
 						Continue Shopping

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Products from './components/Products/Products';
 import Favorites from './components/Favorites/Favorites';
 import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
 	return (
@@ -17,6 +18,7 @@ const App = () => {
 					<Route path="/favorites" component={Favorites} />
 				</Switch>
 			</main>
+			<Footer />
 		</Router>
 	);
 };

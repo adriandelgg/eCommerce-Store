@@ -18,7 +18,6 @@ const Products = () => {
 					className="products-container"
 					container
 					component="main"
-					spacing={3}
 					justify="center"
 				>
 					{data ? (

@@ -13,7 +13,7 @@ import {
 	CardActions,
 	CardContent
 } from '@material-ui/core';
-import { ExpandMoreIcon, AddShoppingCart, Done } from '@material-ui/icons';
+import { AddShoppingCart, Done } from '@material-ui/icons';
 import { CardHeader } from '@material-ui/core';
 import HeartIcon from '../../helper/heartIcon';
 
@@ -34,13 +34,22 @@ const Product = () => {
 				const itemInCart = itemsInCart.includes(item.id);
 
 				return (
-					<Grid item xs={10} sm={4} lg={3} key={item.id} id={item.id}>
+					<Grid
+						item
+						xs={10}
+						sm={4}
+						lg={3}
+						key={item.id}
+						id={item.id}
+						style={{ padding: '.8em .7em' }}
+					>
 						<Card elevation={6}>
 							<CardMedia>
 								<img src={item.media.source} alt="" width="100%" />
 							</CardMedia>
 							<CardHeader
 								title={item.name}
+								style={{ fontWeight: 500 }}
 								action={<HeartIcon newItem={newItem} id={item.id} />}
 								disableTypography
 							/>

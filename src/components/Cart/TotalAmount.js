@@ -42,7 +42,7 @@ const TotalAmount = ({ usdConverter }) => {
 							<TableCell align="right">Tax based on zip code</TableCell>
 						</TableRow>
 						<TableRow>
-							<TableCell>Total</TableCell>
+							<TableCell style={{ fontWeight: 500 }}>Total</TableCell>
 							<TableCell align="right">
 								{usdConverter.format(totalPrices)}
 							</TableCell>

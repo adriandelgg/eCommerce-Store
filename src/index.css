@@ -6,17 +6,36 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-body {
-	font-family: 'Roboto';
-	padding-top: 3em;
-	max-width: 1700px;
-	margin: 0 auto;
-}
-
 html {
 	scroll-behavior: smooth;
 }
 
-header {
+body {
+	font-family: 'Roboto';
+	padding-top: 3em;
+	/* background-color: black; */
+}
+
+section {
 	margin: 0 auto;
+	max-width: 1700px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Poppins';
+}
+
+.category-heading {
+	text-align: center;
+	font-size: clamp(40px, 5vw, 60px);
+	margin: 1em 0;
+}
+
+.empty-heading {
+	text-align: center;
 }

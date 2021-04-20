@@ -5,7 +5,6 @@
 
 .cart-and-total {
 	display: flex;
-	/* align-items: center; */
 }
 
 .hr-vertical {
@@ -14,8 +13,6 @@
 
 .item-cart-container {
 	display: flex;
-	/* flex-wrap: wrap; */
-	/* background: red; */
 }
 
 .img-and-name {
@@ -37,9 +34,6 @@
 
 .product-cart-img {
 	width: 5em;
-}
-
-.cart-container {
 }
 
 .coupon-heading {
