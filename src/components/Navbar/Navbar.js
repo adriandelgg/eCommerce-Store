@@ -18,27 +18,38 @@ const Navbar = () => {
 			<RiCodeSSlashFill
 				className="logo"
 				size="2em"
-				color="#f7bb50"
+				color="#ececec"
 				style={{ marginLeft: '.5em' }}
 			/>
 
 			<nav className="nav-icons">
-				<IconButton aria-label="Home" component={Link} to="/">
-					<Home style={{ color: 'white' }} />
+				<IconButton
+					className="first-btn"
+					aria-label="Home"
+					component={Link}
+					to="/"
+				>
+					<Home style={{ color: '#ececec' }} />
 				</IconButton>
 
-				<IconButton component={Link} to="/favorites" aria-label="Favorites">
+				<IconButton
+					className="second-btn"
+					component={Link}
+					to="/favorites"
+					aria-label="Favorites"
+				>
 					<Badge color="secondary" badgeContent={itemsFavorited}>
-						<Favorite style={{ color: 'white' }} />
+						<Favorite style={{ color: '#ececec' }} />
 					</Badge>
 				</IconButton>
 				<IconButton
+					className="third-btn"
 					component={Link}
 					to="/shoppingcart"
 					aria-label="Shopping Cart"
 				>
 					<Badge color="secondary" badgeContent={itemsInCart}>
-						<ShoppingCart style={{ color: 'white' }} />
+						<ShoppingCart style={{ color: '#ececec' }} />
 					</Badge>
 				</IconButton>
 			</nav>

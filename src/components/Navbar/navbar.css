@@ -9,9 +9,9 @@ header {
 	left: 0;
 	right: 0;
 	width: 100%;
-	/* max-width: 1700px; */
-	background-color: black;
+	background-color: hsl(0, 0%, 4%);
 	z-index: 15;
+	border-bottom: 0.5px hsl(0, 0%, 9%) solid;
 }
 
 nav {
@@ -21,6 +21,28 @@ nav {
 nav a {
 	text-decoration: none;
 	padding: 0 1em;
+}
+
+.first-btn {
+	opacity: 0;
+	animation: navDown 1s 2.3s forwards;
+}
+.second-btn {
+	opacity: 0;
+	animation: navDown 1s 2.45s forwards;
+}
+.third-btn {
+	opacity: 0;
+	animation: navDown 1s 2.55s forwards;
+}
+
+@keyframes navDown {
+	0% {
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 @media (max-width: 450px) {

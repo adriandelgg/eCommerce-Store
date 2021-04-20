@@ -2,7 +2,7 @@ import React from 'react';
 import './landing.css';
 import macbook from '../../img/macbookpro.webp';
 import { Button, IconButton } from '@material-ui/core';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import { ArrowDownward, NavigateNext } from '@material-ui/icons';
 
 const Landing = () => {
 	return (
@@ -10,20 +10,34 @@ const Landing = () => {
 			<div className="landing-container">
 				<h2 className="landing-heading">MacBook Pro</h2>
 				<h3 className="landing-paragraph">Powerful. Fast. Elegant.</h3>
-				{/* <div className="landing-img"> */}
 				<img className="macbook-img" src={macbook} alt="Macbook Pro" />
-				{/* </div> */}
 				<div className="landing-btns">
-					<Button color="primary" variant="contained">
+					<Button
+						color="primary"
+						variant="contained"
+						style={{ marginBottom: '1em' }}
+					>
 						Buy Now
 					</Button>
-					<Button color="primary" variant="outlined">
+					<Button
+						color="primary"
+						variant="outlined"
+						endIcon={<NavigateNext />}
+					>
 						Learn More
 					</Button>
 				</div>
-				<IconButton>
+				<IconButton
+					className="landing-arrow"
+					style={{
+						position: 'absolute',
+						bottom: 0,
+						opacity: '0',
+						transition: 'opacity 1s 3s'
+					}}
+				>
 					<a href="#products">
-						<ArrowDownwardIcon color="primary" />
+						<ArrowDownward color="primary" />
 					</a>
 				</IconButton>
 			</div>
