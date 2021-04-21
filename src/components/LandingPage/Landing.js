@@ -28,7 +28,6 @@ const Landing = () => {
 					</Button>
 				</div>
 				<IconButton
-					className="landing-arrow"
 					style={{
 						position: 'absolute',
 						bottom: 0,

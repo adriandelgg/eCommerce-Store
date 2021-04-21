@@ -17,7 +17,7 @@ const Footer = () => {
 			<h5 className="footer-text">© Created by Adrian Delgado 2021</h5>
 			<div className="backup-arrow animation">
 				<a href="#">
-					<HiArrowUp size="3em" color="black" />
+					<HiArrowUp size="3em" color="#2b2b2b" />
 				</a>
 			</div>
 		</footer>

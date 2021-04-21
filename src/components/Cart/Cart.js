@@ -37,15 +37,17 @@ const Cart = () => {
 						<MobileCart />
 					)}
 
-					<Button
-						component={Link}
-						to="/"
-						style={{ margin: '2em 0' }}
-						startIcon={<KeyboardReturn />}
-						variant="contained"
-					>
-						Continue Shopping
-					</Button>
+					<div className="continue-shopping-btn">
+						<Button
+							component={Link}
+							to="/"
+							style={{ margin: '2em 0' }}
+							startIcon={<KeyboardReturn />}
+							variant="contained"
+						>
+							Continue Shopping
+						</Button>
+					</div>
 				</div>
 				<hr className="hr-vertical" />
 				<div className="total-and-coupon cart-containers">

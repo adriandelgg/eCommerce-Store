@@ -36,6 +36,10 @@
 	width: 5em;
 }
 
+.continue-shopping-btn {
+	text-align: center;
+}
+
 .coupon-heading {
 	display: flex;
 	align-items: center;

@@ -1,5 +1,6 @@
 footer {
 	height: 10em;
+	color: #2b2b2b;
 }
 
 .contact-me {
@@ -29,4 +30,17 @@ footer {
 	text-align: center;
 	animation: backDown 0.6s forwards;
 	width: 70px;
+}
+
+.animation {
+	transform: translateZ(0);
+	transition-duration: 0.3s;
+	transition-property: transform;
+	transition-timing-function: ease-out;
+}
+
+.animation:hover,
+.animation:focus,
+.animation:active {
+	transform: translateY(-8px);
 }

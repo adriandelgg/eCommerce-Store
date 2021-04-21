@@ -19,7 +19,7 @@ const Socials = () => {
 				<FiGithub
 					className="social-footer animation"
 					size="1.5em"
-					color="black"
+					color="#2b2b2b"
 				/>
 			</a>
 			<a
@@ -30,14 +30,14 @@ const Socials = () => {
 				<FiLinkedin
 					className="social-footer animation"
 					size="1.5em"
-					color="black"
+					color="#2b2b2b"
 				/>
 			</a>
 			<a href="mailto:adriandelgado.tech@gmail.com">
 				<FiMail
 					className="social-footer animation"
 					size="1.6em"
-					color="black"
+					color="#2b2b2b"
 				/>
 			</a>
 			<a
@@ -48,7 +48,7 @@ const Socials = () => {
 				<FiInstagram
 					className="social-footer animation"
 					size="1.5em"
-					color="black"
+					color="#2b2b2b"
 				/>
 			</a>
 			<a
@@ -59,7 +59,7 @@ const Socials = () => {
 				<FiTwitter
 					className="social-footer animation"
 					size="1.5em"
-					color="black"
+					color="#2b2b2b"
 				/>
 			</a>
 		</>
