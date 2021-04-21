@@ -23,6 +23,11 @@ nav a {
 	padding: 0 1em;
 }
 
+.logo {
+	opacity: 0;
+	animation: navDown 1s 2.3s forwards;
+}
+
 .first-btn {
 	opacity: 0;
 	animation: navDown 1s 2.3s forwards;

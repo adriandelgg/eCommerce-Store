@@ -28,15 +28,17 @@ const Landing = () => {
 					</Button>
 				</div>
 				<IconButton
+					className="arrow-down-btn"
 					style={{
 						position: 'absolute',
-						bottom: 0,
-						opacity: '0',
-						transition: 'opacity 1s 3s'
+						bottom: 0
 					}}
 				>
 					<a href="#products">
-						<ArrowDownward color="primary" />
+						<ArrowDownward
+							style={{ transform: 'scale(1.8)' }}
+							color="primary"
+						/>
 					</a>
 				</IconButton>
 			</div>

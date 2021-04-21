@@ -37,9 +37,23 @@
 	animation: buttons 1s 2.1s ease-out forwards;
 }
 
+.arrow-down-btn {
+	opacity: 0;
+	animation: macbook 1s 2.1s ease-out forwards;
+	/* height: 3em; */
+}
+
 .macbook-img {
 	width: 70em;
 	animation: Rise 1.7s ease-out;
+}
+
+#products:before {
+	display: block;
+	content: ' ';
+	margin-top: -30px;
+	height: 30px;
+	visibility: hidden;
 }
 
 @keyframes Rise {

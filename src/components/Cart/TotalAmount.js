@@ -56,6 +56,7 @@ const TotalAmount = ({ usdConverter }) => {
 					width: '100%'
 				}}
 				variant="contained"
+				color="primary"
 			>
 				Proceed to Checkout
 			</Button>
