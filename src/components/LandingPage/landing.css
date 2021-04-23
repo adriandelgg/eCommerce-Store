@@ -19,7 +19,7 @@
 }
 
 .landing-heading {
-	font-size: clamp(45px, 5vw, 70px);
+	font-size: clamp(30px, 5vw, 60px);
 	opacity: 0;
 	animation: macbook 1s 1.5s ease-out forwards;
 }
@@ -40,12 +40,11 @@
 .arrow-down-btn {
 	opacity: 0;
 	animation: macbook 1s 2.1s ease-out forwards;
-	/* height: 3em; */
 }
 
 .macbook-img {
-	width: 70em;
-	max-width: 1500px;
+	width: 60em;
+	max-width: 1300px;
 	animation: Rise 1.7s ease-out;
 }
 

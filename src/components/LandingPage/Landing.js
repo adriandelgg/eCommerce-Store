@@ -1,6 +1,7 @@
 import React from 'react';
 import './landing.css';
 import macbook from '../../img/macbookpro.webp';
+
 import { Button, IconButton } from '@material-ui/core';
 import { ArrowDownward, NavigateNext } from '@material-ui/icons';
 

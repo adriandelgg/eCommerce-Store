@@ -28,6 +28,7 @@ const Favorite = () => {
 							maxWidth: '30em'
 						}}
 						className="favorite-item-container"
+						key={item.id}
 					>
 						<IconButton
 							color="secondary"

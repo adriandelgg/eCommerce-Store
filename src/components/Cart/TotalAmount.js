@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import {
 	TableContainer,
@@ -6,10 +7,9 @@ import {
 	TableHead,
 	TableRow,
 	TableCell,
-	TableBody
+	TableBody,
+	Button
 } from '@material-ui/core';
-import { Button } from '@material-ui/core';
-import { useSelector } from 'react-redux';
 import { getTotalPriceAmount } from '../../redux/shoppingCart';
 
 const TotalAmount = ({ usdConverter }) => {

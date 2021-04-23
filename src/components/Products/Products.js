@@ -3,8 +3,8 @@ import './products.css';
 import { useSelector } from 'react-redux';
 
 import Product from './Product';
-import { Grid, CircularProgress } from '@material-ui/core';
 import Landing from '../LandingPage/Landing';
+import { Grid, CircularProgress } from '@material-ui/core';
 
 const Products = () => {
 	const data = useSelector(state => state.products.data);

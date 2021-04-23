@@ -1,7 +1,7 @@
 import React from 'react';
 import './cart.css';
-
 import { useSelector, useDispatch } from 'react-redux';
+
 import {
 	IconButton,
 	InputLabel,
@@ -10,7 +10,9 @@ import {
 	Table,
 	TableRow,
 	TableCell,
-	TableBody
+	TableBody,
+	Input,
+	FormControl
 } from '@material-ui/core';
 import { Remove, Add, DeleteForever } from '@material-ui/icons';
 import {
@@ -20,8 +22,6 @@ import {
 	itemsChanged,
 	getAllItemsInCart
 } from '../../redux/shoppingCart';
-import { Input } from '@material-ui/core';
-import { FormControl } from '@material-ui/core';
 
 // Creates item in cart
 const CartProduct = ({ usdConverter }) => {
@@ -45,7 +45,7 @@ const CartProduct = ({ usdConverter }) => {
 							const { id, name, img, price, quantity } = item;
 
 							return (
-								<TableRow>
+								<TableRow key={id}>
 									<TableCell component="th" scope="row">
 										<div className="img-and-name">
 											<IconButton

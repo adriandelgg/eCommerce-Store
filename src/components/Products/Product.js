@@ -1,5 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+import HeartIcon from '../../helper/heartIcon';
+
 import {
 	getItemsInCart,
 	itemAdded,
@@ -11,11 +14,10 @@ import {
 	CardMedia,
 	Grid,
 	CardActions,
-	CardContent
+	CardContent,
+	CardHeader
 } from '@material-ui/core';
 import { AddShoppingCart, Done } from '@material-ui/icons';
-import { CardHeader } from '@material-ui/core';
-import HeartIcon from '../../helper/heartIcon';
 
 const Product = () => {
 	const dispatch = useDispatch();

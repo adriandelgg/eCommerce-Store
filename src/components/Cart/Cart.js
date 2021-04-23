@@ -1,15 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import CartProduct from './CartProduct';
 import TotalAmount from './TotalAmount';
-import { getTotalItemsInCart } from '../../redux/shoppingCart';
+import Coupon from './Coupon';
 import IsMobile from '../../helper/IsMobile';
 import MobileCart from './MobileCart';
+
+import { getTotalItemsInCart } from '../../redux/shoppingCart';
 import { Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 import { KeyboardReturn } from '@material-ui/icons';
-import Coupon from './Coupon';
 
 const Cart = () => {
 	const itemsInCart = useSelector(getTotalItemsInCart);

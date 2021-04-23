@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
+
 import {
 	IconButton,
 	InputLabel,
@@ -9,7 +9,9 @@ import {
 	Table,
 	TableRow,
 	TableCell,
-	TableBody
+	TableBody,
+	Input,
+	FormControl
 } from '@material-ui/core';
 
 import { Remove, Add, DeleteForever } from '@material-ui/icons';
@@ -20,8 +22,6 @@ import {
 	itemsChanged,
 	getAllItemsInCart
 } from '../../redux/shoppingCart';
-import { Input } from '@material-ui/core';
-import { FormControl } from '@material-ui/core';
 
 const MobileCart = () => {
 	const shoppingCart = useSelector(getAllItemsInCart);
@@ -42,7 +42,7 @@ const MobileCart = () => {
 							const { id, name, img, price, quantity } = item;
 
 							return (
-								<TableRow>
+								<TableRow key={id}>
 									<TableCell component="th" scope="row">
 										<div className="img-and-name">
 											<IconButton
