@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Button } from '@material-ui/core';
-import { FormControl, InputLabel, Input } from '@material-ui/core';
+import { Input } from '@material-ui/core';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 
 const Coupon = () => {

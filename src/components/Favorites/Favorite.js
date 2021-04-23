@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getFavoritedItems, itemUnfavorited } from '../../redux/favorites';
 import { getItemsInCart, itemAdded } from '../../redux/shoppingCart';
-import { Button, Container, Paper } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 import { AddShoppingCart, Done, DeleteForever } from '@material-ui/icons';
 import { Grid } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';

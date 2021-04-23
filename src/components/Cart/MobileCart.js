@@ -3,18 +3,16 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	IconButton,
-	Paper,
 	InputLabel,
 	TableContainer,
 	TableHead,
 	Table,
 	TableRow,
 	TableCell,
-	TableBody,
-	Button
+	TableBody
 } from '@material-ui/core';
 
-import { Remove, Add, DeleteForever, ArrowBack } from '@material-ui/icons';
+import { Remove, Add, DeleteForever } from '@material-ui/icons';
 import {
 	itemRemoved,
 	itemAdded,

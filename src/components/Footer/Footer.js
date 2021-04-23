@@ -1,6 +1,7 @@
 import React from 'react';
-import SocialsMobile from './SocialsFooter';
 import './footer.css';
+
+import SocialsMobile from './SocialsFooter';
 import { HiArrowUp } from 'react-icons/hi';
 
 const Footer = () => {
