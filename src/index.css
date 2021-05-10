@@ -6,10 +6,6 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-html {
-	scroll-behavior: smooth;
-}
-
 body {
 	font-family: 'Roboto';
 	padding-top: 3em;
