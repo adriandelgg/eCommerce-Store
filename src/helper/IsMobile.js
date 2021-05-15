@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+// Checks if viewport width is mobile sized.
 const IsMobile = () => {
 	const [isMobile, setIsMobile] = useState(true);
 

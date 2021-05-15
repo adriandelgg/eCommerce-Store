@@ -13,9 +13,11 @@ import { Button } from '@material-ui/core';
 import { KeyboardReturn } from '@material-ui/icons';
 
 const Cart = () => {
+	// Gets number total items in cart & checks for mobile size.
 	const itemsInCart = useSelector(getTotalItemsInCart);
 	const { isMobile } = IsMobile();
 
+	// Formats number to USD
 	const usdConverter = new Intl.NumberFormat('en-US', {
 		style: 'currency',
 		currency: 'USD',

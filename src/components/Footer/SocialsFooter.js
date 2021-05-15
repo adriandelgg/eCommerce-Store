@@ -7,6 +7,7 @@ import {
 	FiMail
 } from 'react-icons/fi';
 
+// Creates the social links for the footer
 const Socials = () => {
 	return (
 		<>

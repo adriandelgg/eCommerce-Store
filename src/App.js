@@ -11,7 +11,7 @@ import Footer from './components/Footer/Footer';
 const App = () => {
 	return (
 		<Router>
-			<ScrollToTop />
+			<ScrollToTop /> 
 			<Navbar />
 			<main>
 				<Switch>

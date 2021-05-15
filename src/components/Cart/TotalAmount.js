@@ -17,7 +17,6 @@ const TotalAmount = ({ usdConverter }) => {
 
 	return (
 		<>
-			{/* <h3>Cart Totals</h3> */}
 			<TableContainer>
 				<Table>
 					<TableHead>

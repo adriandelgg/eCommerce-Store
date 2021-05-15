@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Button } from '@material-ui/core';
-import { Input } from '@material-ui/core';
+import { Button, Input } from '@material-ui/core';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 
+// Creates the coupon section of the checkout page.
 const Coupon = () => {
 	return (
 		<div>

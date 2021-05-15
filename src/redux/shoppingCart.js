@@ -37,20 +37,19 @@ const slice = createSlice({
 	}
 });
 
-export const {
-	itemAdded,
-	itemRemoved,
-	itemsChanged,
-	itemDeleted
-} = slice.actions;
+export const { itemAdded, itemRemoved, itemsChanged, itemDeleted } =
+	slice.actions;
 export default slice.reducer;
 
 // Selectors
+
+// Gets all the items in cart and their info
 export const getAllItemsInCart = createSelector(
 	state => state.shoppingCart,
 	items => items
 );
 
+// Gets the numeric total of items in cart
 export const getTotalItemsInCart = createSelector(
 	state => state.shoppingCart,
 	items => {
@@ -60,6 +59,7 @@ export const getTotalItemsInCart = createSelector(
 	}
 );
 
+// Calculates the total price of all the items in cart
 export const getTotalPriceAmount = createSelector(
 	state => state.shoppingCart,
 	items => {
@@ -72,6 +72,7 @@ export const getTotalPriceAmount = createSelector(
 	}
 );
 
+// Gets the IDs' of all the items in cart
 export const getItemsInCart = createSelector(
 	state => state.shoppingCart,
 	items => items.map(item => item.id)

@@ -3,13 +3,15 @@ import './navbar.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import { getFavoritedItemsTotal } from '../../redux/favorites';
 import { getTotalItemsInCart } from '../../redux/shoppingCart';
+
+import { ShoppingCart, Favorite, Home } from '@material-ui/icons';
 import { RiCodeSSlashFill } from 'react-icons/ri';
 import { Badge, IconButton } from '@material-ui/core';
-import { ShoppingCart, Favorite, Home } from '@material-ui/icons';
-import { getFavoritedItemsTotal } from '../../redux/favorites';
 
 const Navbar = () => {
+	// Gets the numeric total of items to update the badge.
 	const itemsInCart = useSelector(getTotalItemsInCart);
 	const itemsFavorited = useSelector(getFavoritedItemsTotal);
 

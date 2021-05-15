@@ -8,7 +8,9 @@ import { getFavoritedItemsTotal } from '../../redux/favorites';
 import { Button } from '@material-ui/core';
 import { ArrowForward, KeyboardReturn } from '@material-ui/icons';
 
+// Creates the Favorites page
 const Favorites = () => {
+	// The numeric total of all favorite items
 	const totalFavorites = useSelector(getFavoritedItemsTotal);
 
 	return (

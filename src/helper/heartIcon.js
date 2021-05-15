@@ -8,6 +8,7 @@ import {
 	itemUnfavorited
 } from '../redux/favorites';
 
+// Used to toggle the heart icon for favorites.
 const HeartIcon = ({ newItem, id }) => {
 	const [heartFilled, setHeartFilled] = useState(false);
 	const dispatch = useDispatch();

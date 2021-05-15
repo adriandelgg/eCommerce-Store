@@ -21,6 +21,7 @@ import { AddShoppingCart, Done } from '@material-ui/icons';
 
 const Product = () => {
 	const dispatch = useDispatch();
+	// Gets the data of the Fetched API to populate the products.
 	const data = useSelector(state => state.products.data);
 	const itemsInCart = useSelector(getItemsInCart);
 
